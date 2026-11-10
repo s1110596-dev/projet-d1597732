@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  
+  <!-- SEO Primary Meta Tags -->
+  <title>文市相逢｜臺中舊城動靜雙核 Citywalk 專題影展</title>
+  <meta name="title" content="文市相逢｜臺中舊城動靜雙核 Citywalk 專題影展">
+  <meta name="description" content="甲七組期中影展專題企劃《文市相逢》。串聯臺中文學館的日式靜謐與第五市場的在地生活煙火，專為 18-28 歲旅人打造的舊城動靜雙核 Citywalk 漫遊路線。">
+  <meta name="keywords" content="文市相逢, 臺中文學館, 第五市場, Citywalk, 臺中舊城漫遊, 影展專題, 舊城美食, 日式老屋, 觀光企劃">
+  <meta name="author" content="行銷二甲 甲七組">
+
+  <!-- Open Graph / Facebook / Line SEO -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://taichung-citywalk.example.com/">
+  <meta property="og:title" content="文市相逢｜臺中舊城動靜雙核 Citywalk 專題影展">
+  <meta property="og:description" content="以腳步為序，讀一座城。串聯臺中文學館與第五市場，探索臺中舊城歷史記憶與常民生活的動靜對比。">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=1200">
+
+  <!-- Twitter Meta Tags -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="文市相逢｜臺中舊城動靜雙核 Citywalk 專題影展">
+  <meta property="twitter:description" content="以腳步為序，讀一座城。串聯臺中文學館與第五市場的 Citywalk 漫遊路線。">
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=1200">
+
+  <!-- Schema.org JSON-LD Structured Data for Google Search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristTrip",
+    "name": "文市相逢 臺中舊城 Citywalk",
+    "description": "串聯臺中文學館與第五市場的動靜雙核複合式漫遊路線",
+    "touristType": "18-28歲年輕漫遊與攝影客群",
+    "itinerary": [
+      {
+        "@type": "City",
+        "name": "第五市場",
+        "description": "傳統庶民美食與常民生活採買"
+      },
+      {
+        "@type": "City",
+        "name": "臺中文學館",
+        "description": "日式警察宿舍群與文學歷史展示"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Noto Serif TC & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        screens: {
+          'xs': '475px',
+          'sm': '640px',
+          'md': '768px',
+          'lg': '1024px',
+          'xl': '1280px',
+        },
+        extend: {
+          colors: {
+            brand: {
+              paper: '#F9F6F0',       /* 和紙暖白 */
+              paperCard: '#F0ECE1',   /* 質感柔灰 */
+              moss: '#2D3A2F',        /* 苔綠主色 */
+              mossDark: '#1E2720',    /* 墨綠深色 */
+              terracotta: '#C85A32',  /* 暖赤陶色 */
+              warmInk: '#332E2B',     /* 暖墨黑文字 */
+              mutedInk: '#787069',    /* 溫和灰墨 */
+              sand: '#E6DFC8'         /* 沙色邊框 */
+            }
+          },
+          fontFamily: {
+            serif: ['"Noto Serif TC"', 'serif'],
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F9F6F0;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #C85A32;
+      border-radius: 3px;
+    }
+    
+    /* 豎排文字排版 (Vertical Writing Support) */
+    .writing-vertical {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+    }
+  </style>
+</head>
+<body class="bg-brand-paper text-brand-warmInk font-sans antialiased selection:bg-brand-terracotta selection:text-white">
+
+  <!-- Header Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-brand-paper/90 backdrop-blur-md border-b border-brand-sand/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-3 group" title="文市相逢 首頁">
+        <span class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-brand-moss text-brand-moss font-serif font-bold text-base sm:text-lg flex items-center justify-center group-hover:bg-brand-moss group-hover:text-white transition-all">文</span>
+        <div class="flex flex-col">
+          <span class="font-serif font-bold text-base sm:text-lg tracking-widest text-brand-moss">文市相逢</span>
+          <span class="text-[9px] sm:text-[10px] text-brand-terracotta tracking-widest uppercase font-mono">Citywalk Film Project</span>
+        </div>
+      </a>
+      
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center space-x-6 lg:space-x-10 text-brand-warmInk">
+        <a href="#hero" class="text-sm font-serif hover:text-brand-terracotta transition-colors">首頁</a>
+        <a href="#about" class="text-sm font-serif hover:text-brand-terracotta transition-colors">策展概念</a>
+        <a href="#duality" class="text-sm font-serif hover:text-brand-terracotta transition-colors">動靜雙核</a>
+        <a href="#stp" class="text-sm font-serif hover:text-brand-terracotta transition-colors">客群與定位</a>
+        <a href="#story" class="text-sm font-serif hover:text-brand-terracotta transition-colors">故事預告</a>
+        <a href="#team" class="text-sm font-serif hover:text-brand-terracotta transition-colors">團隊成員</a>
+      </nav>
+
+      <!-- Action Button -->
+      <div class="hidden md:flex items-center space-x-4">
+        <button onclick="openModal('swotModal')" class="px-4 py-2 text-xs font-serif tracking-widest rounded-full border border-brand-moss text-brand-moss hover:bg-brand-moss hover:text-white transition-all">
+          SWOT 企劃分析
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button onclick="toggleMobileMenu()" aria-label="切換導覽選單" class="md:hidden text-brand-warmInk text-xl p-2 focus:outline-none">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer (RWD optimized) -->
+    <div id="mobileMenu" class="hidden md:hidden bg-brand-paperCard border-b border-brand-sand/60 px-6 pt-3 pb-6 space-y-3 font-serif">
+      <a href="#hero" onclick="toggleMobileMenu()" class="block py-2 text-base text-brand-warmInk hover:text-brand-terracotta border-b border-brand-sand/30">首頁</a>
+      <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-base text-brand-warmInk hover:text-brand-terracotta border-b border-brand-sand/30">策展概念</a>
+      <a href="#duality" onclick="toggleMobileMenu()" class="block py-2 text-base text-brand-warmInk hover:text-brand-terracotta border-b border-brand-sand/30">動靜雙核</a>
+      <a href="#stp" onclick="toggleMobileMenu()" class="block py-2 text-base text-brand-warmInk hover:text-brand-terracotta border-b border-brand-sand/30">客群與定位</a>
+      <a href="#story" onclick="toggleMobileMenu()" class="block py-2 text-base text-brand-warmInk hover:text-brand-terracotta border-b border-brand-sand/30">故事預告</a>
+      <a href="#team" onclick="toggleMobileMenu()" class="block py-2 text-base text-brand-warmInk hover:text-brand-terracotta border-b border-brand-sand/30">團隊成員</a>
+      <button onclick="openModal('swotModal'); toggleMobileMenu();" class="w-full mt-3 py-2.5 text-center text-xs font-serif tracking-widest rounded-full border border-brand-moss text-brand-moss hover:bg-brand-moss hover:text-white transition-all">
+        SWOT 企劃分析
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Hero Section (Responsive Layout) -->
+  <section id="hero" class="pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-44 lg:pb-32 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <!-- Left Column: Title & Intro -->
+      <div class="lg:col-span-8 space-y-6 sm:space-y-8 text-left">
+        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-brand-paperCard border border-brand-sand text-brand-terracotta text-xs font-serif tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-brand-terracotta animate-pulse"></span>
+          <span>臺中舊城動靜雙核 Citywalk 複合式漫遊路線</span>
+        </div>
+        
+        <h1 class="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-serif font-black text-brand-moss leading-tight tracking-wide">
+          文 市 相 逢
+        </h1>
+        
+        <p class="text-lg sm:text-2xl font-serif text-brand-terracotta italic font-normal tracking-wide">
+          「以腳步為序，讀一座城。」
+        </p>
+        
+        <p class="text-sm sm:text-base lg:text-lg text-brand-mutedInk leading-relaxed font-sans max-w-2xl">
+          走進日式老屋與百年樹影的靜謐時光，轉角擁抱傳統市場熱氣騰騰的市井煙火。
+          專為 18–28 歲熱愛城市探索與影像紀錄的旅人打造，用雙腳漫遊臺中舊城，尋找歲月與日常交織的動人瞬間。
+        </p>
+
+        <div class="pt-2 sm:pt-4 flex flex-col xs:flex-row items-stretch xs:items-center gap-3.5 font-serif text-xs sm:text-sm">
+          <a href="#duality" class="px-6 sm:px-8 py-3.5 rounded-full bg-brand-moss hover:bg-brand-mossDark text-white tracking-widest shadow-md transition-all text-center">
+            探索動靜雙核
+          </a>
+          <a href="#story" class="px-6 sm:px-8 py-3.5 rounded-full border border-brand-moss text-brand-moss hover:bg-brand-paperCard tracking-widest transition-all text-center">
+            故事腳本與預告
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Vertical Bookmark Style Art (Hidden on small mobile, visible on desktop/large tablet) -->
+      <div class="lg:col-span-4 hidden lg:flex justify-end">
+        <div class="p-8 bg-brand-paperCard rounded-2xl border border-brand-sand shadow-sm flex items-center space-x-6">
+          <div class="writing-vertical text-xl sm:text-2xl font-serif font-bold text-brand-moss tracking-widest border-l border-brand-sand pl-4">
+            歷史在此延續
+          </div>
+          <div class="writing-vertical text-xl sm:text-2xl font-serif font-bold text-brand-terracotta tracking-widest">
+            生活也在此發生
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Concept Section -->
+  <section id="about" class="py-16 sm:py-20 bg-brand-paperCard/50 border-y border-brand-sand/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+      <div class="max-w-3xl mx-auto text-center space-y-4 sm:space-y-6">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-brand-terracotta">Concept & Vision</h2>
+        <h3 class="text-2xl sm:text-3xl font-serif font-bold text-brand-moss">專案選題與核心價值</h3>
+        <p class="text-brand-mutedInk text-sm sm:text-base lg:text-lg leading-relaxed font-sans">
+          臺中文學館與第五市場僅一街之隔，卻呈現出鮮明的空間對比。
+          文學館以歷史建築與藝文展示為主，體現舊城的人文底蘊；第五市場則承載庶民小吃與日常採買，呈現生活活力。
+          本企劃以 <strong class="text-brand-warmInk">Citywalk</strong> 為載體，引導年輕遊客由動至靜、探索舊城，感受文化與日常並存的多元風貌。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dual Core Section (Responsive Grid System) -->
+  <section id="duality" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+    <div class="space-y-10 sm:space-y-12">
+      <div class="text-center space-y-3">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-brand-terracotta">Dual Core Discovery</h2>
+        <h3 class="text-2xl sm:text-3xl font-serif font-bold text-brand-moss">動靜雙核 ｜ 探索對比</h3>
+      </div>
+
+      <!-- Grid System: 1 column on Mobile, 2 columns on MD+ -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        <!-- Station 1: Taichung Literature Museum (Static) -->
+        <article class="bg-brand-paperCard rounded-2xl overflow-hidden border border-brand-sand shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="relative h-60 sm:h-72 overflow-hidden">
+              <img src="https://taichung.travel/content/images/attractions/55574/1024x768_attractions-image-etxkftvbcu2sksm-oujscq.jpg" 
+                   onerror="this.onerror=null; this.src='https://placehold.co/800x600/2D3A2F/FFFFFF?text=%E8%87%BA%E4%B8%AD%E6%96%87%E5%AD%B8%E9%A4%A8';"
+                   alt="臺中文學館 觀光旅遊網官方照片" 
+                   class="w-full h-full object-cover">
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-brand-moss text-white text-xs font-serif tracking-widest">
+                靜 ｜ 人文歷史
+              </span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-4">
+              <div class="flex items-baseline justify-between border-b border-brand-sand/60 pb-3">
+                <h3 class="text-xl sm:text-2xl font-bold text-brand-moss font-serif">臺中文學館</h3>
+                <span class="text-xs text-brand-mutedInk">10:00 - 17:00 (週一休館)</span>
+              </div>
+              <p class="text-xs sm:text-sm text-brand-mutedInk leading-relaxed">
+                原為日治時期警察宿舍群，綠意盎然的老樹與木造官舍造就鬧市中靜謐氛圍。保留台灣文學記憶，兼具歷史展示與日式庭園美學。
+              </p>
+            </div>
+          </div>
+          <div class="p-6 sm:p-8 pt-0">
+            <a href="https://www.google.com/maps/place/?q=place_id:ChIJy-bJ4wo9aTQRiVd5iYJ6yP8" target="_blank" rel="noopener noreferrer" title="前往臺中文學館 Google 地圖" class="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-full border border-brand-moss text-brand-moss hover:bg-brand-moss hover:text-white text-xs font-serif tracking-wider transition-all">
+              <i class="fa-solid fa-location-dot mr-2"></i>開啟臺中文學館 Google 地圖
+            </a>
+          </div>
+        </article>
+
+        <!-- Station 2: Fifth Market (Dynamic) -->
+        <article class="bg-brand-paperCard rounded-2xl overflow-hidden border border-brand-sand shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            <div class="relative h-60 sm:h-72 overflow-hidden">
+              <img src="https://travel.taichung.gov.tw/image/59139/1024x768" 
+                   onerror="this.onerror=null; this.src='https://placehold.co/800x600/C85A32/FFFFFF?text=%E7%AC%AC%E4%BA%94%E5%B8%82%E5%A0%B4';"
+                   alt="臺中市第五市場 觀光旅遊網官方照片" 
+                   class="w-full h-full object-cover">
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-brand-terracotta text-white text-xs font-serif tracking-widest">
+                動 ｜ 市井煙火
+              </span>
+            </div>
+            <div class="p-6 sm:p-8 space-y-4">
+              <div class="flex items-baseline justify-between border-b border-brand-sand/60 pb-3">
+                <h3 class="text-xl sm:text-2xl font-bold text-brand-moss font-serif">第五市場</h3>
+                <span class="text-xs text-brand-mutedInk">07:00 - 14:00</span>
+              </div>
+              <p class="text-xs sm:text-sm text-brand-mutedInk leading-relaxed">
+                創立於 1938 年，為舊城區極具特色的庶民傳統市集。集結諸如麵線羹、紅茶冰等在地美味，熱情吆喝與人情互動呈現最真實的生活溫度。
+              </p>
+            </div>
+          </div>
+          <div class="p-6 sm:p-8 pt-0">
+            <a href="https://www.google.com/maps/place/?q=place_id:ChIJVzFkVAk9aTQRFFPlC0krNNY" target="_blank" rel="noopener noreferrer" title="前往第五市場 Google 地圖" class="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-full border border-brand-terracotta text-brand-terracotta hover:bg-brand-terracotta hover:text-white text-xs font-serif tracking-wider transition-all">
+              <i class="fa-solid fa-location-dot mr-2"></i>開啟第五市場 Google 地圖
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <!-- NEW: Competitor Analysis Table -->
+      <div class="pt-8">
+        <h4 class="text-xl font-serif font-bold text-brand-moss mb-4 text-center">雙核特色與競品橫向對比表</h4>
+        <div class="overflow-x-auto rounded-xl border border-brand-sand bg-brand-paperCard p-4">
+          <table class="w-full text-xs sm:text-sm text-left font-sans">
+            <thead class="bg-brand-paper border-b border-brand-sand font-serif text-brand-moss">
+              <tr>
+                <th class="p-3">對比項目</th>
+                <th class="p-3 text-brand-terracotta">臺中文學館 × 第五市場（本案）</th>
+                <th class="p-3">草悟道 × 審計新村</th>
+                <th class="p-3">歌劇院 × 秋紅谷</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-brand-sand/50 text-brand-mutedInk">
+              <tr>
+                <td class="p-3 font-bold text-brand-warmInk">定位</td>
+                <td class="p-3 font-semibold text-brand-warmInk">日式歷史與常民生活雙核串聯 Citywalk</td>
+                <td class="p-3">都會綠帶與文創聚落休閒商圈</td>
+                <td class="p-3">現代建築地標與生態公園休憩</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-brand-warmInk">歷史紋理</td>
+                <td class="p-3">歷經日治至今近百年（日式官舍與庶民市集） ★★★★★</td>
+                <td class="p-3">戰後宿舍轉型與現代商圈交織 ★★★☆☆</td>
+                <td class="p-3">七期重劃區新闢地標與公園 ★☆☆☆☆</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-brand-warmInk">空間屬性</td>
+                <td class="p-3">強烈「動靜反差」與高密度步行串聯 ★★★★★</td>
+                <td class="p-3">風格店舖與開放綠地休閒 ★★★☆☆</td>
+                <td class="p-3">前衛流線建築與開闊景觀池 ★★★★☆</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-brand-warmInk">消費體驗</td>
+                <td class="p-3">平價在地小吃、常民人情味與靜謐展覽</td>
+                <td class="p-3">特色咖啡廳、文創市集與風格選品</td>
+                <td class="p-3">高價位精緻餐飲與國際級展演節目</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Target & STP Section (Responsive Grid & Cards & Table) -->
+  <section id="stp" class="py-16 sm:py-24 bg-brand-paperCard/50 border-y border-brand-sand/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 space-y-10 sm:space-y-12">
+      <div class="text-center space-y-3">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-brand-terracotta">STP & Persona Analysis</h2>
+        <h3 class="text-2xl sm:text-3xl font-serif font-bold text-brand-moss">目標客群與市場定位</h3>
+      </div>
+
+      <!-- Responsive Grid for Persona & Value proposition -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Target Definition Card -->
+        <div class="p-6 rounded-2xl bg-brand-paper border border-brand-sand space-y-3">
+          <div class="w-10 h-10 rounded-full bg-brand-moss/10 text-brand-moss flex items-center justify-center text-lg">
+            <i class="fa-solid fa-user-tag"></i>
+          </div>
+          <h4 class="font-serif font-bold text-lg text-brand-moss">受眾設定 (TA)</h4>
+          <p class="text-xs sm:text-sm text-brand-mutedInk leading-relaxed">
+            18–28 歲喜歡城市漫遊、攝影與社群分享的年輕外地遊客。重視景點質感與常民生活體驗。
+          </p>
+        </div>
+
+        <!-- Functional Value Card -->
+        <div class="p-6 rounded-2xl bg-brand-paper border border-brand-sand space-y-3">
+          <div class="w-10 h-10 rounded-full bg-brand-terracotta/10 text-brand-terracotta flex items-center justify-center text-lg">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+          <h4 class="font-serif font-bold text-lg text-brand-moss">功能性價值</h4>
+          <p class="text-xs sm:text-sm text-brand-mutedInk leading-relaxed">
+            提供日式歷史建築與傳統市場的雙重路線，兼具在地平價小吃與具美感之拍攝場景。
+          </p>
+        </div>
+
+        <!-- Emotional Value Card -->
+        <div class="p-6 rounded-2xl bg-brand-paper border border-brand-sand space-y-3 md:col-span-2 lg:col-span-1">
+          <div class="w-10 h-10 rounded-full bg-brand-moss/10 text-brand-moss flex items-center justify-center text-lg">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <h4 class="font-serif font-bold text-lg text-brand-moss">情感性價值</h4>
+          <p class="text-xs sm:text-sm text-brand-mutedInk leading-relaxed">
+            以悠閒步行節奏放鬆身心，從文化與日常交織的舊城風景中，感受到濃厚的人情溫度。
+          </p>
+        </div>
+      </div>
+
+      <!-- NEW: STP Segmentation Table -->
+      <div class="space-y-4">
+        <h4 class="text-xl font-serif font-bold text-brand-moss text-center">STP 市場區隔類型表</h4>
+        <div class="overflow-x-auto rounded-xl border border-brand-sand bg-brand-paper p-4">
+          <table class="w-full text-xs sm:text-sm text-left font-sans">
+            <thead class="bg-brand-paperCard border-b border-brand-sand font-serif text-brand-moss">
+              <tr>
+                <th class="p-3">客群類型</th>
+                <th class="p-3">旅遊動機與需求</th>
+                <th class="p-3">景點選擇與偏好</th>
+                <th class="p-3">本企劃契合度</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-brand-sand/50 text-brand-mutedInk">
+              <tr class="bg-brand-terracotta/5">
+                <td class="p-3 font-bold text-brand-terracotta">城市漫遊探索型（核心選定）</td>
+                <td class="p-3">對街區與地方文化感興趣，期待深入在地生活</td>
+                <td class="p-3">歷史建築、特色街區、傳統市場</td>
+                <td class="p-3 font-bold text-brand-terracotta">高度契合（完美涵蓋動靜雙核）</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-brand-warmInk">美食探索型</td>
+                <td class="p-3">希望品嚐地方特色美食，重視飲食文化</td>
+                <td class="p-3">傳統市場、在地小吃、特色店家</td>
+                <td class="p-3">中度契合（著重第五市場美食）</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-brand-warmInk">熱門景點導向型</td>
+                <td class="p-3">期待代表性觀光體驗，打卡知名景點</td>
+                <td class="p-3">熱門景區、著名地標</td>
+                <td class="p-3">低契合（偏向知名觀光區）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Script & Trailer Section (RWD Video Player) -->
+  <section id="story" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 space-y-10 sm:space-y-12">
+    <div class="text-center space-y-3">
+      <h2 class="text-xs font-mono uppercase tracking-widest text-brand-terracotta">Trailer & Storyboard</h2>
+      <h3 class="text-2xl sm:text-3xl font-serif font-bold text-brand-moss">專題故事與影片預告</h3>
+    </div>
+
+    <!-- Video Player Responsive Container -->
+    <div class="bg-brand-paperCard rounded-2xl border border-brand-sand p-4 sm:p-6 lg:p-8 shadow-sm space-y-6 sm:space-y-8">
+      <div class="aspect-video w-full rounded-xl overflow-hidden bg-black shadow-lg relative">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/6Llx4NClJe8?si=C5nx0E2IiwHcEBPm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-full h-full absolute top-0 left-0"></iframe>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 pt-2 sm:pt-4">
+        <div class="space-y-3">
+          <h4 class="text-lg sm:text-xl font-serif font-bold text-brand-moss flex items-center">
+            <i class="fa-solid fa-clapperboard text-brand-terracotta mr-3"></i>故事腳本概要
+          </h4>
+          <p class="text-xs sm:text-sm text-brand-mutedInk leading-relaxed">
+            主角在繁忙生活中背起背包，前往第五市場。相機紀錄熙來嚷往的人潮與經典美食；隨後轉入臺中文學館，在老屋樹影下放慢腳步閱讀。旅程結束後回看照片，體會「平凡日常皆能成為美好回憶」。
+          </p>
+        </div>
+        <div class="space-y-3">
+          <h4 class="text-lg sm:text-xl font-serif font-bold text-brand-moss flex items-center">
+            <i class="fa-solid fa-lightbulb text-brand-terracotta mr-3"></i>創意發想亮點
+          </h4>
+          <ul class="text-xs sm:text-sm text-brand-mutedInk space-y-2">
+            <li class="flex items-start">
+              <span class="text-brand-terracotta mr-2">✦</span>
+              <span><b>湯匙視覺轉場：</b>以「舀取美食」代表在地品嚐，再透過「湯匙鏡面反射」優雅轉場至文學館庭園。</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-brand-terracotta mr-2">✦</span>
+              <span><b>底片期待感：</b>結合 Z 世代復古相機風潮，以等待底片沖洗的期待感，呼應漫遊舊城過程中的未知驚喜。</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Members Section (RWD 2 to 4 columns Grid) -->
+  <section id="team" class="py-16 sm:py-24 bg-brand-paperCard/50 border-t border-brand-sand/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 space-y-10 sm:space-y-12">
+      <div class="text-center space-y-3">
+        <h2 class="text-xs font-mono uppercase tracking-widest text-brand-terracotta">Project Team</h2>
+        <h3 class="text-2xl sm:text-3xl font-serif font-bold text-brand-moss">甲七組 專案團隊成員</h3>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+        <div class="p-4 sm:p-5 rounded-xl bg-brand-paper border border-brand-sand text-center space-y-1 shadow-sm">
+          <span class="text-[11px] sm:text-xs text-brand-terracotta font-mono font-bold block">組長 / 企劃 / 剪輯</span>
+          <h4 class="font-serif font-bold text-sm sm:text-base text-brand-moss">蘇芯怡</h4>
+        </div>
+        <div class="p-4 sm:p-5 rounded-xl bg-brand-paper border border-brand-sand text-center space-y-1 shadow-sm">
+          <span class="text-[11px] sm:text-xs text-brand-terracotta font-mono font-bold block">企劃 / 美編</span>
+          <h4 class="font-serif font-bold text-sm sm:text-base text-brand-moss">林瑀宸</h4>
+        </div>
+        <div class="p-4 sm:p-5 rounded-xl bg-brand-paper border border-brand-sand text-center space-y-1 shadow-sm">
+          <span class="text-[11px] sm:text-xs text-brand-terracotta font-mono font-bold block">企劃</span>
+          <h4 class="font-serif font-bold text-sm sm:text-base text-brand-moss">盧紋庭</h4>
+        </div>
+        <div class="p-4 sm:p-5 rounded-xl bg-brand-paper border border-brand-sand text-center space-y-1 shadow-sm">
+          <span class="text-[11px] sm:text-xs text-brand-terracotta font-mono font-bold block">導演</span>
+          <h4 class="font-serif font-bold text-sm sm:text-base text-brand-moss">張以姍</h4>
+        </div>
+        <div class="p-4 sm:p-5 rounded-xl bg-brand-paper border border-brand-sand text-center space-y-1 shadow-sm">
+          <span class="text-[11px] sm:text-xs text-brand-terracotta font-mono font-bold block">拍攝</span>
+          <h4 class="font-serif font-bold text-sm sm:text-base text-brand-moss">韓綺璇</h4>
+        </div>
+        <div class="p-4 sm:p-5 rounded-xl bg-brand-paper border border-brand-sand text-center space-y-1 shadow-sm">
+          <span class="text-[11px] sm:text-xs text-brand-terracotta font-mono font-bold block">文案 / 副剪輯</span>
+          <h4 class="font-serif font-bold text-sm sm:text-base text-brand-moss">林珈妤</h4>
+        </div>
+        <div class="p-4 sm:p-5 rounded-xl bg-brand-paper border border-brand-sand text-center space-y-1 shadow-sm">
+          <span class="text-[11px] sm:text-xs text-brand-terracotta font-mono font-bold block">側拍紀錄</span>
+          <h4 class="font-serif font-bold text-sm sm:text-base text-brand-moss">黃嘉萍</h4>
+        </div>
+        <div class="p-4 sm:p-5 rounded-xl bg-brand-paper border border-brand-sand text-center space-y-1 shadow-sm">
+          <span class="text-[11px] sm:text-xs text-brand-terracotta font-mono font-bold block">劇務</span>
+          <h4 class="font-serif font-bold text-sm sm:text-base text-brand-moss">陳宣錞</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SWOT Analysis Modal (Accessible & RWD) -->
+  <div id="swotModal" aria-hidden="true" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-brand-paper rounded-2xl border border-brand-sand max-w-3xl w-full max-h-[85vh] overflow-y-auto p-5 sm:p-8 space-y-6 shadow-2xl">
+      <div class="flex items-center justify-between border-b border-brand-sand pb-4">
+        <h3 class="text-xl sm:text-2xl font-serif font-bold text-brand-moss">SWOT 交叉分析摘要</h3>
+        <button onclick="closeModal('swotModal')" aria-label="關閉視窗" class="text-brand-mutedInk hover:text-brand-terracotta text-xl p-1">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+        <div class="p-4 rounded-xl bg-brand-paperCard border border-brand-sand space-y-2">
+          <h4 class="font-bold text-brand-moss font-serif text-sm sm:text-base">S 優勢 (Strengths)</h4>
+          <p class="text-brand-mutedInk leading-relaxed">日式建築文化底蘊深厚、第五市場傳統美食吸引力高、兩地一街之隔具優良步行連結條件。</p>
+        </div>
+        <div class="p-4 rounded-xl bg-brand-paperCard border border-brand-sand space-y-2">
+          <h4 class="font-bold text-brand-moss font-serif text-sm sm:text-base">W 劣勢 (Weaknesses)</h4>
+          <p class="text-brand-mutedInk leading-relaxed">文學館互動體驗較少、社群曝光度相較於熱門商圈稍顯不足、過去缺乏整合導覽路線。</p>
+        </div>
+        <div class="p-4 rounded-xl bg-brand-paperCard border border-brand-sand space-y-2">
+          <h4 class="font-bold text-brand-moss font-serif text-sm sm:text-base">O 機會 (Opportunities)</h4>
+          <p class="text-brand-mutedInk leading-relaxed">Z 世代偏好復古美學與短影音紀錄、國旅深度探索需求上升、文化資產活化政策支持。</p>
+        </div>
+        <div class="p-4 rounded-xl bg-brand-paperCard border border-brand-sand space-y-2">
+          <h4 class="font-bold text-brand-moss font-serif text-sm sm:text-base">T 威脅 (Threats)</h4>
+          <p class="text-brand-mutedInk leading-relaxed">草悟道、審計新村等成熟商業商圈的排擠效應、需要建立獨特的動態漫遊辨識度。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-10 sm:py-12 bg-brand-paperCard border-t border-brand-sand/60 text-center space-y-2 sm:space-y-3 text-xs text-brand-mutedInk px-4">
+    <p class="font-serif font-bold text-brand-moss text-sm sm:text-base">甲七組 ｜ 文市相逢 期中影展專題網頁</p>
+    <p>© 2026 Taichung Old Town Citywalk Film Project. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+  </script>
+</body>
+</html>
