@@ -1,0 +1,73 @@
+[github_vibe_coding_prompt.md](https://github.com/user-attachments/files/34639781/github_vibe_coding_prompt.md)
+# 🌿 文市相逢 ｜ Vibe Coding Prompt & 開發指南 (GitHub)
+
+本文件紀錄了《文市相逢｜臺中舊城動靜雙核 Citywalk 專題影展》網頁之 **Vibe Coding Prompt 提示詞邏輯**、**視覺語彙定義**與**技術架構規範**，方便團隊使用 AI 工具（如 ChatGPT, Claude, GitHub Copilot）進行後續維護與功能擴充。
+
+---
+
+## 🎨 1. 核心 Vibe (氛圍與風格標籤)
+
+* **設計風格**：日式 Wabi-sabi 和紙風、人文誌雜誌感 (Editorial & Paper Texture Style)
+* **色彩系統 (Color Palette)**：
+  * **主背景**：和紙暖白 `#F9F6F0`
+  * **卡片背景**：質感柔灰 `#F0ECE1`
+  * **主配色**：苔綠 `#2D3A2F` & 墨綠 `#1E2720`
+  * **點綴色**：暖赤陶色 `#C85A32`
+  * **文字與邊框**：暖墨黑 `#332E2B` & 沙色 `#E6DFC8`
+* **字型組合**：`Noto Serif TC` (明體/宋體) 搭配 `Inter` (Sans-serif)
+
+---
+
+## 🤖 2. Vibe Coding 主 Prompt 範本
+
+在對 AI 輸入提示詞以調整或擴充本專頁時，請複製並使用以下 **System Prompt** 作為基礎設定：
+
+```text
+[Role & System Instructions]
+你是一位精通日式人文質感與 Web 視覺設計的前端開發專家。
+請維護專題網頁《文市相逢》，風格定位為「暖系日式和紙風格」與「雜誌感排版」。
+
+[Design System Rules]
+1. Color Token:
+   - Primary BG: #F9F6F0 (Paper Warm White)
+   - Accent BG: #F0ECE1 (Card Gray)
+   - Brand Main: #2D3A2F (Moss Green)
+   - Brand Highlight: #C85A32 (Terracotta Warm Red)
+   - Text Ink: #332E2B & #787069
+2. Typography:
+   - Header & Titles: Noto Serif TC (Serif)
+   - Body & Meta: Inter / Sans-serif
+   - Support Vertical Writing (.writing-vertical) for cultural badges.
+3. Tech Stack:
+   - Single-file HTML structure with Tailwind CSS & Custom CSS (style.css).
+   - Fully responsive grid system (Mobile, Tablet, Desktop).
+   - Strict SEO (OG tags & Schema.org JSON-LD).
+```
+
+---
+
+## 📂 3. 專案架構說明
+
+```
+.
+├── index.html         # 專題主頁面 (包含語意化 HTML, SEO, RWD 結構)
+├── style.css          # 自訂 CSS 樣式檔 (包含 CSS 變數、Custom Reset、Grid 系統)
+└── README_PROMPT.md   # GitHub Vibe Coding 說明文件
+```
+
+---
+
+## 🛠️ 4. 關鍵功能 Prompt 範例
+
+### 💡 範例 A：新增「景點小吃/路線卡片」
+> **Prompt**: 「請基於目前的日式和紙風格（`#F9F6F0` 背景與 `#2D3A2F` 苔綠標題），在《動靜雙核》區塊下方新增一個三欄式的美食推薦卡片，包含第五市場經典小吃（麻糬、麵線羹、紅茶冰），請維護 RWD 響應式佈局並加上 Place ID 地圖按鈕。」
+
+### 💡 範例 B：調整 SEO 與 Schema
+> **Prompt**: 「請幫我更新 `index.html` 中的 Schema.org JSON-LD 結構化標籤，加入行程時間 (duration) 與景點座標資訊，確保符合 Google Search 搜尋優化規範。」
+
+---
+
+## 🚀 5. 快速部署 (Quick Start)
+
+1. 將 `index.html` 與 `style.css` 放於同一根目錄下。
+2. 透過 **GitHub Pages** 或 **Vercel** 直接拖拽即可完成線上發布與預覽。
