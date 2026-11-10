@@ -1,0 +1,311 @@
+/* ==========================================================================
+   專案名稱：文市相逢｜臺中舊城動靜雙核 Citywalk 專題影展
+   作業檔案：style.css
+   說明：包含主題變數、CSS Reset、RWD Grid 系統、組件與卡片樣式
+   ========================================================================== */
+
+/* 1. 主題顏色與變數定義 (CSS Custom Properties) */
+:root {
+  /* 色彩系統 (Color Palette) */
+  --bg-paper: #F9F6F0;       /* 和紙暖白 (主背景色) */
+  --bg-paper-card: #F0ECE1;  /* 質感柔灰 (卡片/區塊背景) */
+  --color-moss: #2D3A2F;     /* 苔綠主色 (標題/重點按鈕) */
+  --color-moss-dark: #1E2720;/* 墨綠深色 (Hover狀態) */
+  --color-terracotta: #C85A32;/* 暖赤陶色 (強調色/標籤) */
+  --color-warm-ink: #332E2B; /* 暖墨黑 (內文主要文字) */
+  --color-muted-ink: #787069 font;/* 溫和灰墨 (次要與說明文字) */
+  --border-sand: #E6DFC8;    /* 沙色邊框 */
+  
+  /* 字體設定 */
+  --font-serif: "Noto Serif TC", "PMingLiU", serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* 動畫過渡 */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* 2. 基本樣式重置 (CSS Reset & Base Rules) */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-paper);
+  color: var(--color-warm-ink);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 選擇區塊顏色 */
+::selection {
+  background-color: var(--color-terracotta);
+  color: #FFFFFF;
+}
+
+/* 自訂客製化滾動條 (Custom Scrollbar) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-paper);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-terracotta);
+  border-radius: 3px;
+}
+
+/* 3. 豎排文字排版 (Vertical Writing Class) */
+.writing-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+/* 4. 頁首與導覽列 (Header & Navigation) */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: rgba(249, 246, 240, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(230, 223, 200, 0.6);
+  transition: all var(--transition-normal);
+}
+
+.header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logo-badge {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  border: 1px solid var(--color-moss);
+  color: var(--color-moss);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.nav-logo:hover .logo-badge {
+  background-color: var(--color-moss);
+  color: #FFFFFF;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-link {
+  font-family: var(--font-serif);
+  font-size: 0.875rem;
+  color: var(--color-warm-ink);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--color-terracotta);
+}
+
+/* 5. 通用按鈕元件 (Buttons) */
+.btn-primary {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  background-color: var(--color-moss);
+  color: #FFFFFF;
+  font-family: var(--font-serif);
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: background-color var(--transition-fast);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-moss-dark);
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  border: 1px solid var(--color-moss);
+  color: var(--color-moss);
+  font-family: var(--font-serif);
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-align: center;
+  transition: all var(--transition-fast);
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background-color: var(--bg-paper-card);
+}
+
+/* 6. 卡片與 Grid 網格佈局 (Cards & Grid System) */
+.grid-container-2 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+.grid-container-3 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+.grid-container-4 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--bg-paper-card);
+  border-radius: 1rem;
+  border: 1px solid var(--border-sand);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: shadow var(--transition-fast);
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* 7. 表格樣式 (Tables) */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-sand);
+  background-color: var(--bg-paper-card);
+  padding: 1rem;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.custom-table th {
+  background-color: var(--bg-paper);
+  font-family: var(--font-serif);
+  color: var(--color-moss);
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-sand);
+}
+
+.custom-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(230, 223, 200, 0.5);
+  color: var(--color-muted-ink);
+}
+
+/* 8. 影音容器 (Responsive Aspect Ratio Video) */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* 9. Modal 彈出視窗 (SWOT Modal) */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-content {
+  background-color: var(--bg-paper);
+  border: 1px solid var(--border-sand);
+  border-radius: 1rem;
+  max-width: 48rem;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* 10. 響應式斷點 (Media Queries / RWD) */
+@media (min-width: 768px) {
+  .grid-container-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-container-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-container-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-container-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
